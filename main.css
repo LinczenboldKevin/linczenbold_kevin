@@ -1,0 +1,329 @@
+body{
+	font-size: 16px;
+	font-family: 'Roboto', sans-serif;
+}
+*, *::before, *::after{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+img{
+	max-width: 100%;
+}
+a{
+	text-decoration: none;
+	color: #000000;
+}
+/*--layout--*/
+	body{
+		background-image: url("képek/main_hatter.jpg");
+		background-size: cover;
+		background-repeat: no-repeat;
+
+		display: grid;
+		grid-template-areas: 
+			"fejléc"
+			"kontent"
+			"lábléc"
+		;
+		grid-template-rows: max-content 1fr max-content;
+		min-height: 100vh;
+	}
+	#rolam{
+		background: white;
+	}
+	header{
+		background-color: #E1CBAB;
+		grid-area: fejléc;
+		position: relative;
+	}
+
+/*--layout_end--*/
+/*--header--*/
+	header{
+		line-height: 2rem;
+		padding: .75rem, 1rem;
+	}
+	.insta_logo{
+		height: 2rem;
+		margin-left: 1rem;
+		margin-right: 1rem;
+		display: inline-block;
+		transform: translateY(.35rem);
+	}
+	.yt_logo{
+		height: 2rem;
+		
+		display: inline-block;
+		transform: translateY(.35rem);
+	}
+	.menu_logo{
+		height: 2rem;
+		display: inline-block;
+		float: right;
+		
+	}
+	.menu_vonalak img{
+		display: inline-block;
+		cursor: pointer;
+		width: 2rem;
+		margin-left: .5rem;
+		position: absolute;
+		right: 1rem;
+		top: .75rem;
+	}
+	.menu_vonalak:hover{
+		background-color: orange;
+		width: 2rem;
+		text-align: center;
+		border-radius: .5rem;
+		user-select: none;
+	}
+/*--header_end--*/
+/*--lenyíló_menü--*/
+	#lenyilo_menu{
+	position: absolute;
+	right: 1rem;
+	top: 2.65rem;
+	display: none;
+	background-color: #E1CBAB;
+	border: 1px solid #E1CBAB;
+	text-align: left;
+	padding: .5rem;
+	max-height: max-content;
+	}
+	#lenyilo_menu.latszodik{
+	display: block;
+	}
+	.lenyilo_almenu{
+	padding-right: 1rem;
+	padding-left: 1rem;
+	line-height: 2rem;
+	}
+/*--lenyíló_menü_end--*/
+/*--main--*/
+	/*
+	repeat(auto-fit, minmax(3rem, 1fr))
+	.5fr 1fr .5fr
+	*/
+/*--felső_menü--*/
+	.grid1{
+		display: grid;
+		grid-template-columns: minmax(0px, 2fr) 1fr 1fr 1fr minmax(0px, 2fr);
+		text-align: center;
+
+	}
+	.main_logo{
+		
+		
+
+	}
+	.main_logo img{
+		max-height: 5rem;
+		/*display: block;*/
+		margin: 1rem auto;
+		min-height: 3rem;
+		min-width: 3rem;
+
+	}
+	.menu_szoveg{
+		margin-left: 1rem;
+		margin-right: 1rem;
+		margin-top: 10%;
+		margin-bottom: 10%;
+		/*font-size: 3rem;*/
+		font-family: 'Anton', sans-serif;
+		font-size: 4vw;
+		font-size-min: 2rem; 
+		
+
+	}
+	.menu_szoveg_link{
+		color: #333366;
+		
+
+
+	}
+	.menu_szoveg_link:hover{
+		text-decoration: underline;
+		border: 1px #E1CBAB;
+		background-color: #E1CBAB;
+		padding: 10px;
+		color: white;
+	}
+/*--felső_menü_end--*/
+/*--Bemutatkozás--*/
+	.grid2{
+		display: grid;
+		grid-template-columns:  1fr;
+		grid-template-areas: 
+			"selfie"
+			"bemutatkozas"
+		;
+	}
+	@media only screen and (min-width: 480px){
+		.grid2{
+			display: grid;
+			grid-template-columns:  1fr 1fr;
+			grid-template-areas: 
+				"selfie bemutatkozas"
+			;
+		}
+	}
+
+	.selfie img{
+		width: 100%;
+		min-width: 15rem;
+		padding-left: 10%;
+		padding-right: 10%;
+	}
+	.bemutatkozas{
+		padding-top: 5%;
+		margin-right: 3rem;
+		margin-left: 3rem;
+		font-size: 2vw;
+
+	}
+/*--Bemutatkozás_end--*/
+/*--main_end--*/
+/*--képek_main--*/
+	h1{
+		font-size: 2rem;
+		padding: 3rem 4rem 2rem 4rem;
+	}
+	.grid3{
+		display: grid;
+		grid-template-columns:  1fr;
+		grid-template-areas: 
+			"eksüvő"
+			"esküvő_kép"
+			"tárgy"
+			"tárgy_kép"
+			"portré"
+			"portré_kép"
+		;
+		grid-gap: 10px;
+	}
+	@media only screen and (min-width: 800px){
+		.grid3{
+			display: grid;
+			grid-template-columns:  1fr 1fr;
+			grid-template-areas: 
+				"eksüvő esküvő_kép"
+				"tárgy_kép tárgy"
+				"portré portré_kép"
+			;
+		}
+		.grid_kep_keret{
+			padding: 1rem;
+			grid-column-end: 2;
+			grid-row-end: 3;
+		}
+		}
+		.targy_kep{
+		padding-right: 1rem;
+		padding-left: 1rem;
+		-webkit-box-shadow: 0px 0px 17px -3px #000000; 
+		box-shadow: 0px 0px 17px -3px #000000;
+		grid-column-end: 2;
+		grid-row-end: 3;
+	}
+	.kepek_leiras{
+		padding-bottom: 2rem;
+		padding-left: 10%;
+		padding-right: 10%;
+		font-size: 2.2vw;
+	}
+	.kep_keret{
+		padding: 1rem;
+	}
+	.targy_kep{
+		padding: 1rem;
+		-webkit-box-shadow: 0px 0px 17px -3px #000000; 
+		box-shadow: 0px 0px 17px -3px #000000;
+		
+	}
+	.eskuvo_kep{
+		padding: 1rem;
+		-webkit-box-shadow: 0px 0px 17px -3px #000000; 
+		box-shadow: 0px 0px 17px -3px #000000;
+	}
+	.portre_kep{
+		padding: 1rem;
+		-webkit-box-shadow: 0px 0px 17px -3px #000000; 
+		box-shadow: 0px 0px 17px -3px #000000;
+	}
+	
+	
+
+	.kepek_gomb{
+		margin-top: 5rem;
+		position: right;
+		margin-right: 2rem;
+		background-color: #333366;
+		border: 1px solid #333366;
+		margin-left: 80%;
+		font-size: 2.5vw;
+		color: #E1CBAB;
+
+
+	}
+/*--képek_main_end--*/
+/*--eskuvo_galéria--*/
+ 	
+ 	
+ 	.galeria_grid{
+ 		display: grid;
+ 		grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+ 		grid-gap: .5rem;
+ 		padding-right: .5rem;
+ 		padding-left: .5rem;
+ 	}
+ 	.galeria_kartya{
+ 		display: block;
+ 		padding: .4rem;
+ 		text-align: center;
+ 		-webkit-box-shadow: 0px 0px 17px -3px #000000; 
+		box-shadow: 0px 0px 17px -3px #000000;
+		position: relative;
+ 		display: flex;
+ 		align-items: center;
+ 		justify-content: center;
+ 	}
+ 	.galeria_kartya img{
+ 		max-height: 90%;
+ 		display: block;
+ 		margin: .4rem auto;
+
+
+
+ 	}
+/*--eskuvo_galéria_end--*/
+/*--web_terv--*/
+	.web_terv{
+		text-align: center;
+		background-color: white;
+	}
+	.terv_bemutatas{
+		margin-left: 10rem;
+		margin-right: 10rem;
+		font-size: 1rem;
+	}
+	.web_terv img{
+		width: 50%;
+
+	}
+	h3{
+		text-align: left;
+		padding-left: 10rem;
+	}
+	.felhasznalt_oldalak{
+		
+		text-align: left;
+		
+		padding-left: 10rem;
+		padding-right: 10rem;
+		background-color: rgba(0,0,0,.2);
+		
+	}
+/*--web_terv--*/
